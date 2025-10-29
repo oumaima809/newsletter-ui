@@ -1,0 +1,9 @@
+.container {
+  margin: 50px 40px;
+
+}
+
+:host ::ng-deep .p-datatable{
+  width:500px;
+  border: solid 1px #ccc;
+}

@@ -1,0 +1,27 @@
+:host ::ng-deep .p-panel {
+  background-color: white;
+  color: black;
+  text-align: start;
+  bottom: 0;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+
+}
+
+.footer-panel-content {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 10px;
+  font-family: 'Playpen Sans Arabic', sans-serif ;
+  font-weight: 400;
+  font-size: small;
+}
+
+.footer-panel-content .links a {
+  margin-left: 0.5rem;
+  color: black;
+}
+
+

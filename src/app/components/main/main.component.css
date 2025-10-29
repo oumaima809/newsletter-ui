@@ -1,0 +1,76 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  gap: 8px;
+}
+
+.form-container {
+  width: 70%;
+  max-width: 500px; /* optional, limits form width */
+  margin: 0 auto;   /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center; /* vertically align input and button */
+  justify-content: center;
+  gap: 10px;           /* space between input and button */
+}
+
+.email-input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  height: 40px;
+  border: 1px solid #ccc;
+}
+.email-input:focus {
+  outline: none;
+  border-color: #8f0606;
+}
+
+:host ::ng-deep .submit-btn .p-button {
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  font-size: large;
+  background-color: #8f0606;
+  border: none;
+}
+
+.p-error{
+  color: #df0a0a;
+  font-size: 1rem;
+  font-weight:bold;
+  margin-right: 73px;
+}
+
+.success-message {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.content{
+  text-align: center;
+  font-family: 'Playpen Sans Arabic', sans-serif ;
+  font-size: 1rem;                  /* smaller for normal text */
+  font-weight: 400;
+}
+
+.title{
+  width: 60%;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: 'Playpen Sans Arabic', sans-serif;
+}
+

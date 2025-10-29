@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #ffff;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* Navbar stays at the top */
+app-navbar {
+  flex-shrink: 0;
+
+}
+
+/* Main content grows to fill available space */
+.main-content {
+  flex: 1;                /* pushes footer down */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer sits at the bottom */
+app-footer {
+  flex-shrink: 0;
+}
+

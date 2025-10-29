@@ -1,0 +1,38 @@
+<div class="main-container">
+  <p class="title">باش تبقى مواكب للتطوّر، نبعثولك كلّ جديد و مفيد ليك: نبض العالم من جيوسياسة، تكنولوجيا، إقتصاد..
+معانا، باش تتعلّم كيفاش تفرّق بين الضجيج والمعلومة النافعة، وتستغلّ الوضوح اللي نقدموه باش تكون ديما سابق بخطوة.
+  </p>
+  <div>
+    <p class="content">نشرة بريدية يومية من الاثنين للجمعة يقراها أكثر من 50 مشترك لحد الآن</p>
+  </div>
+  @if(submissionSuccess){
+    <div class="success-message">
+      شكرًا لاشتراكك! الآن أصبح بإمكانك استقبال النشرة البريدية على بريدك الإلكتروني.
+   </div>
+
+  }
+  @else{
+    <form [formGroup]="user" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-row">
+      <input type="text" pInputText formControlName="email" placeholder="البريد الإلكتروني" class="email-input"/>
+      <p-button label="اشترك مجانًا" type="submit" class="submit-btn" [disabled]="user.invalid"></p-button>
+    </div>
+    @if(user.get('email')?.touched){
+      <small class="p-error">
+          @if(user.get('email')?.errors?.['required']){
+            <span>البريد الإلكتروني مطلوب. </span>
+          }
+          @if(user.get('email')?.errors?.['pattern']){
+            <span>الرجاء إدخال بريد إلكتروني صالح. </span>
+          }
+      </small>
+    }
+     @if(submissionError){
+          <small class="p-error"> <span>{{ errorMessage }}</span> </small>
+
+      }
+  </form>
+
+  }
+
+</div>

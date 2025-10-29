@@ -1,0 +1,30 @@
+<div class="login">
+  <div class="login-container">
+      <div class="header">
+        <h1>مرحبًا بعودتك</h1>
+        <p>أدخل بريدك الإلكتروني وكلمة المرور للوصول إلى حسابك</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <div class="field">
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" type="email" pInputText formControlName="email" placeholder="example@gmail.com"/>
+            <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="p-error">
+              البريد الإلكتروني مطلوب ويجب أن يكون صالحًا.
+            </small>
+       </div>
+
+        <div class="field">
+            <label for="password">كلمة المرور</label>
+            <p-password id="password" formControlName="password" placeholder="كلمة المرور" [feedback]="false" [toggleMask]="true" />
+            <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="p-error">
+              كلمة المرور مطلوبة (على الأقل 6 أحرف).
+            </small>
+        </div>
+        <br />
+        <button pButton type="submit" label="تسجيل الدخول" [disabled]="loginForm.invalid" class="login-btn"></button>
+      </form>
+
+
+  </div>
+</div>
