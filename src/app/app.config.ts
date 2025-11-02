@@ -8,7 +8,8 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { httpTokenInterceptor } from './interceptor/http-token.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),
+  providers: [
+    provideRouter(routes),
     provideHttpClient(withInterceptors([httpTokenInterceptor])),
     provideAnimationsAsync(),
         providePrimeNG({

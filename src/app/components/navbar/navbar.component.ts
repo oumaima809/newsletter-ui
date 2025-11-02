@@ -17,11 +17,13 @@ import { StorageService } from '../../services/storageService/storage.service';
     styleUrls: ['./navbar.component.css']
   })
 export class NavbarComponent implements OnInit {
-    items: MenuItem[] | undefined;
-    constructor(private router: Router, private storageService:StorageService) {}
+    constructor(private router: Router, private storageService:StorageService) {
+    }
 
-    loggedin = true;
+    loggedin = false;
     currentUser: any ;
+
+
 
 
     logout(): void {
@@ -32,19 +34,14 @@ export class NavbarComponent implements OnInit {
 
 
     ngOnInit() {
-        this.items = [
-            {
-                label: 'مقالات',
-                icon: 'pi pi-home'
-            },
-            {
-                label: 'تكوين',
-                icon: 'pi pi-star'
-            },
-
-        ]
-         this.loggedin = !!sessionStorage.getItem('auth-user');
-
+      this.storageService.isLoggedIn().subscribe({
+      next: (data: any) => {
+        this.loggedin = data ? true : false;
+      },
+      error: (err:any) => {
+        console.log(err);
+      }
+    })
     }
 }
 
